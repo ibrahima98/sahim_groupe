@@ -1,0 +1,177 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Nouvelle palette moderne */
+    --background: 220 33% 98%;     /* Gris très clair pour le fond */
+    --foreground: 222 47% 11%;     /* Texte presque noir */
+    
+    /* Conteneurs */
+    --card: 0 0% 100%;             /* Blanc pur */
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    
+    /* Actions */
+    --primary: 222 47% 11%;        /* Noir bleuté */
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondaire */
+    --secondary: 220 14% 96%;      /* Gris très clair */
+    --secondary-foreground: 222 47% 11%;
+    
+    /* États et accents */
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 8% 46%;
+    --accent: 220 14% 96%;
+    --accent-foreground: 222 47% 11%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 20% 98%;
+    
+    /* Bordures et focus */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 222 47% 11%;
+    
+    --radius: 0.5rem;              /* Coins moins arrondis */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+  
+  h1 {
+    @apply text-5xl font-light tracking-tight md:text-6xl;
+  }
+  
+  h2 {
+    @apply text-3xl font-light tracking-tight md:text-4xl;
+  }
+  
+  h3 {
+    @apply text-2xl font-light tracking-tight;
+  }
+}
+
+@layer components {
+  /* Boutons */
+  .btn {
+    @apply px-6 py-3 rounded-md font-normal text-sm tracking-wide 
+           transition-all duration-200 uppercase;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:opacity-90;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground hover:opacity-90;
+  }
+  
+  /* Cartes */
+  .card {
+    @apply bg-card rounded-lg border-0 shadow-sm hover:shadow-md
+           transition-shadow duration-200 p-8;
+  }
+  
+  /* Navigation */
+  .nav-link {
+    @apply text-sm uppercase tracking-wide text-muted-foreground 
+           hover:text-foreground transition-colors;
+  }
+  
+  /* Formulaires */
+  .input {
+    @apply w-full px-4 py-3 rounded-md border border-input bg-background
+           focus:outline-none focus:ring-1 focus:ring-ring text-sm;
+  }
+  
+  /* Sections */
+  .section {
+    @apply py-24 md:py-32;
+  }
+  
+  .container {
+    @apply px-6 mx-auto max-w-6xl;
+  }
+  
+  /* Header spécial */
+  .hero-section {
+    @apply min-h-[80vh] flex items-center;
+    background: linear-gradient(to bottom right, var(--background), var(--card));
+  }
+  
+  /* Grille moderne */
+  .modern-grid {
+    @apply grid gap-8 md:grid-cols-2 lg:grid-cols-3;
+  }
+  
+  /* Image container */
+  .image-container {
+    @apply relative overflow-hidden rounded-lg aspect-[4/3];
+  }
+  
+  /* Tags */
+  .tag {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs
+           bg-secondary text-secondary-foreground;
+  }
+  
+  /* Navigation mobile */
+  .mobile-nav-overlay {
+    @apply fixed inset-0 bg-black/20 backdrop-blur-sm md:hidden;
+  }
+
+  .mobile-nav-content {
+    @apply fixed top-16 left-0 right-0 bg-white border-b border-border/50 
+           shadow-lg animate-slide-down md:hidden;
+  }
+
+  /* Animation pour le menu mobile */
+  @keyframes slide-down {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-slide-down {
+    animation: slide-down 0.2s ease-out;
+  }
+}
+
+@layer utilities {
+  /* Animations subtiles */
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-1;
+  }
+  
+  /* Texte spécial */
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Bordures subtiles */
+  .border-subtle {
+    @apply border border-border/50;
+  }
+  
+  /* Espacement */
+  .space-y-large {
+    @apply space-y-24 md:space-y-32;
+  }
+}
+
+
