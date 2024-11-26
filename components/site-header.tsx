@@ -40,7 +40,7 @@ export function SiteHeader() {
         </div>
         {/* Desktop Button */}
         <div className="ml-auto hidden md:flex items-center space-x-4">
-          <Link href="/auto-ecole/connexion">
+          <Link href="/auto-ecole/">
             <Button variant="outline">Espace Auto-École</Button>
           </Link>
         </div>
@@ -79,7 +79,7 @@ export function SiteHeader() {
             >
               Contact
             </Link>
-            <Link href="/auto-ecole/connexion" onClick={() => setIsOpen(false)}>
+            <Link href="/auto-ecole/" onClick={() => setIsOpen(false)}>
               <Button variant="outline" className="w-full">
                 Espace Auto-École
               </Button>
