@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Car, MapPin, Star } from "lucide-react"
+import Link from "next/link"
 
 export function Hero() {
   return (
@@ -15,13 +16,17 @@ export function Hero() {
           Tout simplement.
         </p>
         <div className="flex flex-wrap gap-4 justify-center">
-          <Button size="lg" className="gap-2">
-            <MapPin className="w-4 h-4" />
-            Trouver une auto-école
+          <Button asChild size="lg" className="gap-2">
+            <Link href="/trouver">
+              <MapPin className="w-4 h-4" />
+              Trouver une auto-école
+            </Link>
           </Button>
-          <Button size="lg" variant="outline" className="gap-2">
-            <Car className="w-4 h-4" />
-            Je suis une auto-école
+          <Button asChild size="lg" variant="outline" className="gap-2">
+            <Link href="/auto-ecole">
+              <Car className="w-4 h-4" />
+              Je suis une auto-école
+            </Link>
           </Button>
         </div>
         <div className="mt-12 flex justify-center gap-8 text-sm text-muted-foreground">

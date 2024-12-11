@@ -1,6 +1,16 @@
-import { SearchFilters } from '@/components/search/filters'
-import { SearchMap } from '@/components/search/map'
-import { SchoolList } from '@/components/search/school-list'
+"use client";
+
+import { SearchFilters } from '@/components/search/filters';
+import { SchoolList } from '@/components/search/school-list';
+import dynamic from 'next/dynamic';
+
+const SearchMapComponent = dynamic(
+  () => import('@/components/search/map').then(mod => mod.SearchMap),
+  { 
+    ssr: false,
+    loading: () => <div>Chargement de la carte...</div>
+  }
+);
 
 export default function SearchPage() {
   return (
@@ -10,7 +20,7 @@ export default function SearchPage() {
         <div className="grid lg:grid-cols-[350px,1fr] gap-8">
           <SearchFilters />
           <div className="space-y-8">
-            <SearchMap />
+            <SearchMapComponent />
             <SchoolList />
           </div>
         </div>

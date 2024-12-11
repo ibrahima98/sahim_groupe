@@ -1,15 +1,15 @@
 "use client"
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Star, MapPin, Phone, Share2 } from "lucide-react"
+import { Card } from "@/components/ui/card"
+import { MapPin, Phone, Share2, Star } from "lucide-react"
 
 const schools = [
   {
     id: 1,
     name: "Auto-École Excellence",
-    location: "Dakar, Plateau",
+    location: "123 Rue Félix Faure, Dakar",
     rating: 4.8,
     reviews: 124,
     verified: true,
@@ -18,7 +18,115 @@ const schools = [
     image: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&q=80&w=400",
     features: ["Cours en ligne", "Simulateur", "Paiement échelonné"]
   },
-  // ... autres écoles
+  {
+    id: 2,
+    name: "École de Conduite Moderne",
+    location: "45 Avenue Lamine Gueye, Saint-Louis",
+    rating: 4.6,
+    reviews: 98,
+    verified: true,
+    price: "160 000 FCFA",
+    phone: "+221 77 234 56 78",
+    image: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&q=80&w=400",
+    features: ["Cours intensif", "Simulateur", "WiFi gratuit"]
+  },
+  {
+    id: 3,
+    name: "Auto-École Yoff Plage",
+    location: "Route de l'Aéroport, Yoff",
+    rating: 4.7,
+    reviews: 156,
+    verified: true,
+    price: "170 000 FCFA",
+    phone: "+221 77 345 67 89",
+    image: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&q=80&w=400",
+    features: ["Cours bilingue", "Parking", "Climatisation"]
+  },
+  {
+    id: 4,
+    name: "Auto-École Rufisque Centre",
+    location: "Boulevard Maurice Gueye, Rufisque",
+    rating: 4.5,
+    reviews: 87,
+    verified: true,
+    price: "155 000 FCFA",
+    phone: "+221 77 456 78 90",
+    image: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&q=80&w=400",
+    features: ["Cours du soir", "Paiement mobile", "Salle multimédia"]
+  },
+  {
+    id: 5,
+    name: "Ziguinchor Driving School",
+    location: "Avenue du Général de Gaulle, Ziguinchor",
+    rating: 4.9,
+    reviews: 112,
+    verified: true,
+    price: "150 000 FCFA",
+    phone: "+221 77 567 89 01",
+    image: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&q=80&w=400",
+    features: ["Cours en diola", "Simulateur", "Climatisation"]
+  },
+  {
+    id: 6,
+    name: "Auto-École Thiès Express",
+    location: "Avenue Léopold Sédar Senghor, Thiès",
+    rating: 4.7,
+    reviews: 143,
+    verified: true,
+    price: "165 000 FCFA",
+    phone: "+221 77 678 90 12",
+    image: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&q=80&w=400",
+    features: ["Formation accélérée", "Wifi gratuit", "Parking"]
+  },
+  {
+    id: 7,
+    name: "Kaolack Permis Plus",
+    location: "Boulevard des 30 mètres, Kaolack",
+    rating: 4.6,
+    reviews: 91,
+    verified: true,
+    price: "155 000 FCFA",
+    phone: "+221 77 789 01 23",
+    image: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&q=80&w=400",
+    features: ["Cours du weekend", "Simulateur", "Salle climatisée"]
+  },
+  {
+    id: 8,
+    name: "Auto-École Mbour Saly",
+    location: "Route de Saly, Mbour",
+    rating: 4.8,
+    reviews: 167,
+    verified: true,
+    price: "170 000 FCFA",
+    phone: "+221 77 890 12 34",
+    image: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&q=80&w=400",
+    features: ["Cours en anglais", "Piscine", "Restaurant"]
+  },
+  {
+    id: 9,
+    name: "Touba Conduite",
+    location: "Avenue Cheikh Ahmadou Bamba, Touba",
+    rating: 4.7,
+    reviews: 134,
+    verified: true,
+    price: "160 000 FCFA",
+    phone: "+221 77 901 23 45",
+    image: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&q=80&w=400",
+    features: ["Cours en wolof", "Parking", "Climatisation"]
+  },
+  {
+    id: 10,
+    name: "Auto-École Parcelles",
+    location: "Parcelles Assainies Unité 15, Dakar",
+    rating: 4.5,
+    reviews: 78,
+    verified: true,
+    price: "165 000 FCFA",
+    phone: "+221 77 012 34 56",
+    image: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&q=80&w=400",
+    features: ["Cours du soir", "Wifi gratuit", "Parking"]
+  },
+  // ... Suite dans le prochain message à cause de la limite de caractères ...
 ]
 
 export function SchoolList() {
