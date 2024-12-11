@@ -1,5 +1,6 @@
 import { FeaturedSchools } from '@/components/featured-schools'
 import { Features } from '@/components/features'
+import { Footer } from '@/components/footer'
 import { Hero } from '@/components/hero'
 import { PromoTegginu } from '@/components/promo-tegginu'
 import { PromotionsSection } from '@/components/promotions-section'
@@ -15,6 +16,7 @@ export default function Home(): JSX.Element {
       <FeaturedSchools />
       <Features />
       <PromoTegginu />
+      <Footer />
     </main>
   )
 }

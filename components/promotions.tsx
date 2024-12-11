@@ -1,11 +1,10 @@
-"use client"
+"use client";
 
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import Link from "next/link"
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
 
 const promotions = [
+  // Ajoutez ici toutes les promotions des auto-écoles
   {
     id: 1,
     schoolName: "Auto-École Excellence",
@@ -15,28 +14,14 @@ const promotions = [
     endDate: "2024-09-30",
     image: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&q=80&w=400",
   },
-  {
-    id: 2,
-    schoolName: "École de Conduite Moderne",
-    location: "Saint-Louis",
-    title: "Nouveaux simulateurs",
-    content: "Venez découvrir nos nouveaux simulateurs de conduite dernière génération",
-    endDate: "2024-12-31",
-    image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&q=80&w=400",
-  }
-]
+  // Ajoutez d'autres promotions ici
+];
 
-export function PromotionsSection() {
+export default function PromotionsPage() {
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary/50">
       <div className="max-w-7xl mx-auto">
-        <div className="flex justify-between items-center mb-8">
-          <h2 className="text-3xl font-bold">Promotions et actualités</h2>
-          <Link href="/promotions">
-            <Button variant="outline">Voir toutes les offres</Button>
-          </Link>
-        </div>
-
+        <h2 className="text-3xl font-bold mb-8">Toutes les promotions</h2>
         <div className="grid md:grid-cols-2 gap-6">
           {promotions.map((promo) => (
             <Card key={promo.id} className="overflow-hidden">
@@ -70,5 +55,5 @@ export function PromotionsSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
